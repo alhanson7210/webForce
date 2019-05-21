@@ -1,0 +1,241 @@
+/*
+	Useful information looked at during the process of creating this piece of code
+	#Notes start from 'info usef for' and beyond
+*/
+
+				/*info used for understand navigatinig multiple pages*/
+
+	/*Adding pages can be as simple as adding another JS file to the pages directory/folder(PATH/pages/fileName.js)
+
+Instruction: It appears that adding a page is written with 'export default function pageName()'and the function returns the html
+	code to represent the page.
+
+#Note:  This is client-side navigation; the action takes place in the browser, without making a request to the server. You can 
+	verify this by opening your browser's network request inspector.
+*/
+
+	/*Links for adding a page
+Examples of js code accessed from :https://nextjs.org/learn/basics/navigate-between-pages/using-link
+
+instruction: Import the default export Link from the module 'next/link' and add the link where needed(with anchor[a] tag if 
+	desired) in the code.
+
+Syntax:
+	import Link from 'next/link'
+	export default function Index() {
+  		<div>
+    			<Link href="/about">
+      				<a>About Page</a>
+    			</Link>
+    			<p>Hello Next.js</p>
+  		</div>
+	}
+
+*/
+
+	/*Exporting
+
+Examples of js code accessed from :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+
+Definition: The export statement is used when creating JavaScript modules to export functions, objects, or primitive values 
+	from the module so they can be used by other programs with the import statement.Exported modules are in strict mode 
+	whether you declare them as such or not. The export statement cannot be used in embedded scripts.
+
+Syntax:
+	// Exporting individual features
+	export let name1, name2, …, nameN; // also var, const
+	export let name1 = …, name2 = …, …, nameN; // also var, const
+	export function functionName(){...}
+	export class ClassName {...}
+
+	// Export list
+	export { name1, name2, …, nameN };
+
+	// Renaming exports
+	export { variable1 as name1, variable2 as name2, …, nameN };
+
+	// Default exports
+	export default expression;
+	export default function (…) { … } // also class, function*
+	export default function name1(…) { … } // also class, function*
+	export { name1 as default, … };
+
+	// Aggregating modules
+	export * from …;
+	export { name1, name2, …, nameN } from …;
+	export { import1 as name1, import2 as name2, …, nameN } from …;
+	export { default } from …;
+
+Description: There are two different types of export, named and default. You can have multiple named exports per module but only 
+	one default export. Each type corresponds to one of the above syntax.
+*/
+
+	/*Importing
+
+Examples of js code accessed from :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+
+Definition:The static import statement is used to import features into JavaScript modules that have been exported by another 
+	module.Imported modules are implicitly in strict mode whether you declare them as such or not.
+
+	sub-info:There is also a function-like dynamic import(), which allows modules to be imported dynamically when needed,
+	rather than at the start of the module.Dynamic imports are useful in situations where you wish to load a module 
+	conditionally, or on demand.The static form is preferable for loading initial dependencies, and can benefit more readily 
+	from static analysis tools and tree shaking.
+
+Syntax:
+	// Import individual features
+	import { export } from "module-name";
+	import { export1 , export2 } from "module-name";
+
+	// Import default export
+	import defaultExport from "module-name";
+
+	// Import all of a module's exports as a module object
+	import * as name from "module-name";
+
+	// Import renamed exports 
+	import { export as alias } from "module-name";
+
+	// Import a module for side effects only
+	import "module-name";
+
+	// Combinations	
+	import { export1 , export2 as alias2 , [...] } from "module-name";
+	import defaultExport, { export [ , [...] ] } from "module-name";
+	import defaultExport, * as name from "module-name";
+
+	// Dynamic module import
+	var promise = import("module-name"); // This is a stage 3 proposal.
+*/
+
+	/*Addint the about page
+Example of adding pages:
+	run 'npm run dev'
+	then use http://localhost:3000/about 
+	to go to the newly added page without links added
+
+In essence(i.e.):
+	export default function About() {
+		return (
+			<div>
+				<p>This is the about page</p>
+			</div>
+		)
+	}
+*/
+
+/*
+Information accessed from:https://nextjs.org/learn/basics/navigate-between-pages/works-with-anything
+
+Description: Link Works With Anything. Just like a button, you can place any of your custom React components or even a div 
+	within a Link.The only requirement for components placed inside a Link is they should accept an  onClick prop.
+
+*/
+
+			/*info used to understand the first part of the index before adding the about page*/
+
+	/*Arrow functions
+
+Definition: An arrow function expression is a syntactically compact alternative to a regular function expression, although 
+	without its own bindings to the this, arguments, super, or new.target keywords. Arrow function expressions are ill 
+	suited as methods, and they cannot be used as constructors.
+
+Example of the Arrow function was accesed from :
+
+In essence(i.e.):
+	var materials = [ 
+		'Hydrogen',
+		'Helium',
+		'Lithium',
+		'Beryllium'
+	];
+
+	console.log(materials.map(material => material.length));
+	expected output: Array [8, 6, 7, 9]
+*/
+
+
+	/*Function expression in js
+
+Definition: The function keyword can be used to define a function inside an expression.You can also define functions using the 
+	Function constructor and a function declaration.
+
+Example of the function expression was accessed from :
+
+In essence(i.e.):
+	Note: Function statements/declarations are Function Objects(first-class-objects) 
+	var getRectArea = function(width, height) {
+		return width * height;
+	}
+
+	console.log(getRectArea(3,4));
+	expected output: 12
+
+*/
+
+	/* Const in javascript
+
+Definition: A const is essentially a constant variable that cannot be changed, so in essence, it is immutable.
+
+Examples of js code accessed from :https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+
+In essense(i.e.):
+	NOTE: Constants can be declared with uppercase or lowercase, but a common
+	convention is to use all-uppercase letters.
+
+	define MY_FAV as a constant and give it the value 7
+	const MY_FAV = 7;
+
+	this will throw an error - Uncaught TypeError: Assignment to constant variable.
+	MY_FAV = 20;
+
+	MY_FAV is 7
+	console.log('my favorite number is: ' + MY_FAV);
+
+	trying to redeclare a constant throws an error -  Uncaught SyntaxError: Identifier 'MY_FAV' has already been declared
+	const MY_FAV = 20;
+
+	the name MY_FAV is reserved for constant above, so this will fail too
+	var MY_FAV = 20;
+
+	this throws an error too
+	let MY_FAV = 20;
+
+	it's important to note the nature of block scoping
+	if (MY_FAV === 7) { 
+		this is fine and creates a block scoped MY_FAV variable 
+		(works equally well with let to declare a block scoped non const variable)
+		let MY_FAV = 20;
+
+		MY_FAV is now 20
+		console.log('my favorite number is ' + MY_FAV);
+
+		this gets hoisted into the global context and throws an error
+		var MY_FAV = 20;
+	}
+
+	MY_FAV is still 7
+	console.log('my favorite number is ' + MY_FAV);
+
+	throws an error - Uncaught SyntaxError: Missing initializer in const declaration
+	const FOO; 
+
+	const also works on objects
+	const MY_OBJECT = {'key': 'value'};
+
+	Attempting to overwrite the object throws an error - Uncaught TypeError: Assignment to constant variable.
+	MY_OBJECT = {'OTHER_KEY': 'value'};
+
+	However, object keys are not protected,
+	so the following statement is executed without problem
+	MY_OBJECT.key = 'otherValue'; // Use Object.freeze() to make object immutable
+
+	The same applies to arrays
+	const MY_ARRAY = [];
+
+	It's possible to push items into the array
+	MY_ARRAY.push('A'); // ["A"]
+	
+	However, assigning a new array to the variable throws an error - Uncaught TypeError: Assignment to constant variable.	
+	MY_ARRAY = ['B'];
+*/

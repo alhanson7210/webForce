@@ -1,0 +1,27 @@
+{
+  "name": "hellonextjs",
+  "version": "1.0.0",
+  "description": "testing nextJs hello example",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "Alex Hanson",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alhanson7210/webForce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alhanson7210/webForce/issues"
+  },
+  "homepage": "https://github.com/alhanson7210/webForce#readme",
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

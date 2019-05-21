@@ -1,0 +1,26 @@
+{
+  "name": "webforce",
+  "version": "1.0.0",
+  "description": "Website to build on diferent aspects of web development stacks for further experience with tools that may be useful to know, use, and understand",
+  "main": "run.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alhanson7210/webForce.git"
+  },
+  "author": "Alex L Hanson Jr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alhanson7210/webForce/issues"
+  },
+  "homepage": "https://github.com/alhanson7210/webForce#readme",
+  "devDependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
