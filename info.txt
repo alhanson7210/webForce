@@ -1,10 +1,20 @@
+-------
+Merging two git repositories
+-------
+command used to combine the two differences
+	git --work-tree="." pull --allow-unrelated-histories origin master
+-------
+
+-------
 install:
+-------
 node
 npm
 nvm
 react
 react-dom
 next
+---------
 
 _________
 using react/npm/node
