@@ -1,5 +1,125 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
+/***/ "./components/header.js":
+/*!******************************!*\
+  !*** ./components/header.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Header; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/UxDeveloperxU/webAppProject/helloNextjs/components/header.js";
+
+
+/**/
+
+/*libraries*/
+
+/*constants*/
+
+var headerStyle = {
+  marginRight: 15
+  /*Component Functions*/
+
+};
+function Header() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    style: headerStyle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "Home")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/about",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    style: headerStyle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, "About")));
+}
+
+/***/ }),
+
+/***/ "./components/pageLayout.js":
+/*!**********************************!*\
+  !*** ./components/pageLayout.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header.js */ "./components/header.js");
+var _jsxFileName = "/Users/UxDeveloperxU/webAppProject/helloNextjs/components/pageLayout.js";
+
+
+/*Method 2 - Page content as a prop; pageLayout/about/index/header*/
+
+/*import js module for layout*/
+
+/*css styles*/
+
+var layoutStyle = {
+  margin: 20,
+  padding: 20,
+  border: '1px solid #DDD'
+  /*code functionality*/
+
+};
+
+var layout = function layout(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: layoutStyle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }), props.children);
+};
+/*exporting js modules within the project*/
+
+
+/* harmony default export */ __webpack_exports__["default"] = (layout);
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
@@ -9649,8 +9769,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return HomeStartUp; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_pageLayout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/pageLayout */ "./components/pageLayout.js");
 var _jsxFileName = "/Users/UxDeveloperxU/webAppProject/helloNextjs/pages/index.js";
 
 
@@ -9664,7 +9783,10 @@ npm run dev -- -p <your port here>.
 */
 
 /*Code updates, error log, and initial error
-update: Changing the anchor tag to a button works fine with links and the title popup as well.
+update: Components folder was created with a header inside and was imported here and the about page;components don't need to be 
+created in a components folder explicitly -it can vary as long as the developer knows where the components are; pages is 
+the only special directory
+Changing the anchor tag to a button works fine with links and the title popup as well.
 Added the popUp to the anchor(a) tag when hovering over a link.
 HomeStartUp was changed to be written as 'export default function HomeStartUp () { return (...)}' because it is more
 compact, I understand it well enough, and I am less likely to forget to add export default after the declaration.
@@ -9683,9 +9805,13 @@ Initial error: does not work for some reason -div structured with breaks, header
 */
 
 /*however, this does work when ran since it is the example from :next.js
+import Link from 'next/link'
 const Index = () => (
 <div>
 <p>Hello Next.js</p>
+<Link href = "/about">
+  <button title = 'about page'>About{' '}Page</button>
+</Link>
 </div>
 )
 export default Index
@@ -9693,6 +9819,7 @@ export default Index
 
 /*Api's used for the program*/
 // This is the Link API
+//import Link from 'next/link'
 
 /*Function declaration for the program*/
 
@@ -9700,49 +9827,106 @@ function HomeStartUp() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 64
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_pageLayout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 66
     },
     __self: this
-  }, "Homepage start up!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+  }, "Homepage start up!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 67
     },
     __self: this
-  }, "Test example code"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 68
     },
     __self: this
-  }, "Hello, this is the first page and it was successful!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "As a designer, I hope to gain experience using Photoshop, Illustrator, and InDesign for event use as well as for art/concept art designs"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 73
     },
     __self: this
-  }, "Don't use breaks yet"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/about",
+  }, "As a developer, I look to gain different experiences in technology from IT services and tech support to app development and cyber security."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56
+      lineNumber: 78
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    title: "about page",
+  }, "As a leader/entrepreneur, I\u2019m looking to gain experience in using the lean method for project development and effective leadership that is inclusive group work in project creation and management of a project, and this also includes improving my soft skills(microsoft suite) and speaking skills -including pitching")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 85
     },
     __self: this
-  }, "About", ' ', "Page")));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: this
+  }, "MDN: CONST")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://nextjs.org",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91
+    },
+    __self: this
+  }, "NEXT.JS")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://atom.io/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95
+    },
+    __self: this
+  }, "ATOM"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98
+    },
+    __self: this
+  }, "Hello, this is the first page and it was successful!")));
 }
+/*
+body of div
+
+const indexPageContent = <p>Hello Next.js</p>
+</Layout content = {indexPageContent}>
+
+propogating the content using connstants
+*/
 
 /***/ }),
 
